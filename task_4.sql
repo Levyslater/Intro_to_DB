@@ -1,9 +1,11 @@
 -- show table details
-CREATE TABLE IF NOT EXISTS books (
-    book_id INT PRIMARY KEY NOT NULL,
-    title VARCHAR(130),
-    price DOUBLE,
-    publication_date DATE,
-    FOREIGN KEY (author_id) REFERENCES Authors(author_id)
-);
-SHOW CREATE TABLE books;
+SELECT
+    COLUMN_NAME,
+    COLUMN_TYPE,
+    IS_NULLABLE,
+    COLUMN_DEFAULT,
+    COLUMN_KEY,
+    EXTRA
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'alx_book_store'
+  AND TABLE_NAME = 'Books';
