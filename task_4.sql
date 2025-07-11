@@ -1,5 +1,4 @@
--- Describe a table without using the DESCRIBE or EXPLAIN statement
-
+-- show table details
 CREATE TABLE IF NOT EXISTS books (
     book_id INT PRIMARY KEY NOT NULL,
     title VARCHAR(130),
