@@ -1,7 +1,7 @@
 # creates a database if it does not exists
 
 import mysql.connector
-from mysql.connector import Error, errorcode
+from mysql.connector import errorcode
 
 try:
     # Connect to MySQL server
@@ -19,7 +19,7 @@ try:
         cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         print("Database 'alx_book_store' created successfully.")
 
-except Error as e:
+except mysql.connector.Error as e:
     if e.errno == errorcode.ER_ACCESS_DENIED_ERROR:
         print("Wrong Username and or password!")
     elif e.errno == errorcode.ER_BAD_DB_ERROR:
